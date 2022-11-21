@@ -14,44 +14,13 @@ Method | HTTP request | Description
 
 ## GetAllUsage
 
-> []UsageResult GetAllUsage(ctx).Execute()
+> []UsageResult GetAllUsage(ctx, )
 
 API usage by customer
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsageApi.GetAllUsage(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsageApi.GetAllUsage``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAllUsage`: []UsageResult
-    fmt.Fprintf(os.Stdout, "Response from `UsageApi.GetAllUsage`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAllUsageRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -73,59 +42,19 @@ Other parameters are passed through a pointer to a apiGetAllUsageRequest struct 
 
 ## GetHostsPerDay
 
-> []UsageResult GetHostsPerDay(ctx, day, month, year).Execute()
+> []UsageResult GetHostsPerDay(ctx, day, month, year)
 
 Host count day / month / year
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    day := int32(56) // int32 | 
-    month := int32(56) // int32 | 
-    year := int32(56) // int32 | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsageApi.GetHostsPerDay(context.Background(), day, month, year).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsageApi.GetHostsPerDay``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetHostsPerDay`: []UsageResult
-    fmt.Fprintf(os.Stdout, "Response from `UsageApi.GetHostsPerDay`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**day** | **int32** |  | 
-**month** | **int32** |  | 
-**year** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetHostsPerDayRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
+**day** | **int32**|  | 
+**month** | **int32**|  | 
+**year** | **int32**|  | 
 
 ### Return type
 
@@ -147,56 +76,18 @@ Name | Type | Description  | Notes
 
 ## GetHostsPerMonth
 
-> []UsageResult GetHostsPerMonth(ctx, month, year).Execute()
+> []UsageResult GetHostsPerMonth(ctx, month, year)
 
 Host count month / year
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    month := int32(56) // int32 | 
-    year := int32(56) // int32 | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsageApi.GetHostsPerMonth(context.Background(), month, year).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsageApi.GetHostsPerMonth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetHostsPerMonth`: []UsageResult
-    fmt.Fprintf(os.Stdout, "Response from `UsageApi.GetHostsPerMonth`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**month** | **int32** |  | 
-**year** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetHostsPerMonthRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+**month** | **int32**|  | 
+**year** | **int32**|  | 
 
 ### Return type
 
@@ -218,59 +109,19 @@ Name | Type | Description  | Notes
 
 ## GetUsagePerDay
 
-> []UsageResult GetUsagePerDay(ctx, day, month, year).Execute()
+> []UsageResult GetUsagePerDay(ctx, day, month, year)
 
 API usage day / month / year
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    day := int32(56) // int32 | 
-    month := int32(56) // int32 | 
-    year := int32(56) // int32 | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsageApi.GetUsagePerDay(context.Background(), day, month, year).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsageApi.GetUsagePerDay``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetUsagePerDay`: []UsageResult
-    fmt.Fprintf(os.Stdout, "Response from `UsageApi.GetUsagePerDay`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**day** | **int32** |  | 
-**month** | **int32** |  | 
-**year** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetUsagePerDayRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
+**day** | **int32**|  | 
+**month** | **int32**|  | 
+**year** | **int32**|  | 
 
 ### Return type
 
@@ -292,56 +143,18 @@ Name | Type | Description  | Notes
 
 ## GetUsagePerMonth
 
-> []UsageResult GetUsagePerMonth(ctx, month, year).Execute()
+> []UsageResult GetUsagePerMonth(ctx, month, year)
 
 API usage month / year
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    month := int32(56) // int32 | 
-    year := int32(56) // int32 | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsageApi.GetUsagePerMonth(context.Background(), month, year).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsageApi.GetUsagePerMonth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetUsagePerMonth`: []UsageResult
-    fmt.Fprintf(os.Stdout, "Response from `UsageApi.GetUsagePerMonth`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**month** | **int32** |  | 
-**year** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetUsagePerMonthRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+**month** | **int32**|  | 
+**year** | **int32**|  | 
 
 ### Return type
 

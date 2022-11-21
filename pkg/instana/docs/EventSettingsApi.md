@@ -5,11 +5,10 @@ All URIs are relative to *https://unit-tenant.instana.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateWebsiteAlertConfig**](EventSettingsApi.md#CreateWebsiteAlertConfig) | **Post** /api/events/settings/website-alert-configs | Create Website Alert Config
-[**DeleteAlert**](EventSettingsApi.md#DeleteAlert) | **Delete** /api/events/settings/alerts/{id} | Delete Alert Configuration
+[**DeleteAlert**](EventSettingsApi.md#DeleteAlert) | **Delete** /api/events/settings/alerts/{id} | Delete alerting
 [**DeleteAlertingChannel**](EventSettingsApi.md#DeleteAlertingChannel) | **Delete** /api/events/settings/alertingChannels/{id} | Delete alerting channel
 [**DeleteBuiltInEventSpecification**](EventSettingsApi.md#DeleteBuiltInEventSpecification) | **Delete** /api/events/settings/event-specifications/built-in/{eventSpecificationId} | Delete built-in event specification
 [**DeleteCustomEventSpecification**](EventSettingsApi.md#DeleteCustomEventSpecification) | **Delete** /api/events/settings/event-specifications/custom/{eventSpecificationId} | Delete custom event specification
-[**DeleteCustomPayloadConfiguration**](EventSettingsApi.md#DeleteCustomPayloadConfiguration) | **Delete** /api/events/settings/custom-payload-configurations | Delete Custom Payload Configuration
 [**DeleteWebsiteAlertConfig**](EventSettingsApi.md#DeleteWebsiteAlertConfig) | **Delete** /api/events/settings/website-alert-configs/{id} | Delete Website Alert Config
 [**DisableBuiltInEventSpecification**](EventSettingsApi.md#DisableBuiltInEventSpecification) | **Post** /api/events/settings/event-specifications/built-in/{eventSpecificationId}/disable | Disable built-in event specification
 [**DisableCustomEventSpecification**](EventSettingsApi.md#DisableCustomEventSpecification) | **Post** /api/events/settings/event-specifications/custom/{eventSpecificationId}/disable | Disable custom event specification
@@ -20,83 +19,44 @@ Method | HTTP request | Description
 [**FindActiveWebsiteAlertConfigs**](EventSettingsApi.md#FindActiveWebsiteAlertConfigs) | **Get** /api/events/settings/website-alert-configs | All Website Alert Configs
 [**FindWebsiteAlertConfig**](EventSettingsApi.md#FindWebsiteAlertConfig) | **Get** /api/events/settings/website-alert-configs/{id} | Get Website Alert Config
 [**FindWebsiteAlertConfigVersions**](EventSettingsApi.md#FindWebsiteAlertConfigVersions) | **Get** /api/events/settings/website-alert-configs/{id}/versions | Get versions of Website Alert Config
-[**GetAlert**](EventSettingsApi.md#GetAlert) | **Get** /api/events/settings/alerts/{id} | Find an Alert Configuration by ID
+[**GetAlert**](EventSettingsApi.md#GetAlert) | **Get** /api/events/settings/alerts/{id} | Alerting
 [**GetAlertingChannel**](EventSettingsApi.md#GetAlertingChannel) | **Get** /api/events/settings/alertingChannels/{id} | Alerting channel
 [**GetAlertingChannels**](EventSettingsApi.md#GetAlertingChannels) | **Get** /api/events/settings/alertingChannels | All alerting channels
 [**GetAlertingChannelsOverview**](EventSettingsApi.md#GetAlertingChannelsOverview) | **Get** /api/events/settings/alertingChannels/infos | Overview over all alerting channels
 [**GetAlertingConfigurationInfos**](EventSettingsApi.md#GetAlertingConfigurationInfos) | **Get** /api/events/settings/alerts/infos | All alerting configuration info
-[**GetAlerts**](EventSettingsApi.md#GetAlerts) | **Get** /api/events/settings/alerts | Get all Alert Configurations
+[**GetAlerts**](EventSettingsApi.md#GetAlerts) | **Get** /api/events/settings/alerts | All Alerting
 [**GetBuiltInEventSpecification**](EventSettingsApi.md#GetBuiltInEventSpecification) | **Get** /api/events/settings/event-specifications/built-in/{eventSpecificationId} | Built-in event specifications
 [**GetBuiltInEventSpecifications**](EventSettingsApi.md#GetBuiltInEventSpecifications) | **Get** /api/events/settings/event-specifications/built-in | All built-in event specification
 [**GetCustomEventSpecification**](EventSettingsApi.md#GetCustomEventSpecification) | **Get** /api/events/settings/event-specifications/custom/{eventSpecificationId} | Custom event specification
 [**GetCustomEventSpecifications**](EventSettingsApi.md#GetCustomEventSpecifications) | **Get** /api/events/settings/event-specifications/custom | All custom event specifications
-[**GetCustomPayloadConfigurations**](EventSettingsApi.md#GetCustomPayloadConfigurations) | **Get** /api/events/settings/custom-payload-configurations | Get Custom Payload Configuration
-[**GetCustomPayloadTagCatalog**](EventSettingsApi.md#GetCustomPayloadTagCatalog) | **Get** /api/events/settings/custom-payload-configurations/catalog | Get tag catalog for custom payload in alerting
 [**GetEventSpecificationInfos**](EventSettingsApi.md#GetEventSpecificationInfos) | **Get** /api/events/settings/event-specifications/infos | Summary of all built-in and custom event specifications
 [**GetEventSpecificationInfosByIds**](EventSettingsApi.md#GetEventSpecificationInfosByIds) | **Post** /api/events/settings/event-specifications/infos | All built-in and custom event specifications
 [**GetSystemRules**](EventSettingsApi.md#GetSystemRules) | **Get** /api/events/settings/event-specifications/custom/systemRules | All system rules for custom event specifications
-[**PostCustomEventSpecification**](EventSettingsApi.md#PostCustomEventSpecification) | **Post** /api/events/settings/event-specifications/custom | Create new custom event specification
-[**PutAlert**](EventSettingsApi.md#PutAlert) | **Put** /api/events/settings/alerts/{id} | Update Alert Configuration
+[**PutAlert**](EventSettingsApi.md#PutAlert) | **Put** /api/events/settings/alerts/{id} | Update alerting
 [**PutAlertingChannel**](EventSettingsApi.md#PutAlertingChannel) | **Put** /api/events/settings/alertingChannels/{id} | Update alerting channel
-[**PutCustomEventSpecification**](EventSettingsApi.md#PutCustomEventSpecification) | **Put** /api/events/settings/event-specifications/custom/{eventSpecificationId} | Create or update custom event specification
-[**RestoreWebsiteAlertConfig**](EventSettingsApi.md#RestoreWebsiteAlertConfig) | **Put** /api/events/settings/website-alert-configs/{id}/restore/{created} | Restore Website Alert Config
+[**PutCustomEventSpecification**](EventSettingsApi.md#PutCustomEventSpecification) | **Put** /api/events/settings/event-specifications/custom/{eventSpecificationId} | Create or Update custom event specification
 [**SendTestAlerting**](EventSettingsApi.md#SendTestAlerting) | **Put** /api/events/settings/alertingChannels/test | Test alerting channel
 [**UpdateWebsiteAlertConfig**](EventSettingsApi.md#UpdateWebsiteAlertConfig) | **Post** /api/events/settings/website-alert-configs/{id} | Update Website Alert Config
-[**UpsertCustomPayloadConfiguration**](EventSettingsApi.md#UpsertCustomPayloadConfiguration) | **Put** /api/events/settings/custom-payload-configurations | Create / Update Custom Payload Configuration
 
 
 
 ## CreateWebsiteAlertConfig
 
-> WebsiteAlertConfigWithMetadata CreateWebsiteAlertConfig(ctx).WebsiteAlertConfig(websiteAlertConfig).Execute()
+> []WebsiteAlertConfigWithMetadata CreateWebsiteAlertConfig(ctx, websiteAlertConfig)
 
 Create Website Alert Config
 
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    websiteAlertConfig := *openapiclient.NewWebsiteAlertConfig([]string{"AlertChannelIds_example"}, []openapiclient.CustomPayloadField{*openapiclient.NewCustomPayloadField("Key_example", "Type_example")}, "Description_example", int32(123), "Name_example", *openapiclient.NewWebsiteAlertRule("AlertType_example", "MetricName_example"), *openapiclient.NewTagFilterExpressionElement("Type_example"), *openapiclient.NewThreshold("Operator_example", "Type_example"), *openapiclient.NewWebsiteTimeThreshold("Type_example"), "WebsiteId_example") // WebsiteAlertConfig | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.CreateWebsiteAlertConfig(context.Background()).WebsiteAlertConfig(websiteAlertConfig).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.CreateWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateWebsiteAlertConfig`: WebsiteAlertConfigWithMetadata
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.CreateWebsiteAlertConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateWebsiteAlertConfigRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **websiteAlertConfig** | [**WebsiteAlertConfig**](WebsiteAlertConfig.md) |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteAlertConfig** | [**WebsiteAlertConfig**](WebsiteAlertConfig.md)|  | 
 
 ### Return type
 
-[**WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
+[**[]WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
 
 ### Authorization
 
@@ -114,51 +74,17 @@ Name | Type | Description  | Notes
 
 ## DeleteAlert
 
-> DeleteAlert(ctx, id).Execute()
+> DeleteAlert(ctx, id)
 
-Delete Alert Configuration
+Delete alerting
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DeleteAlert(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DeleteAlert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAlertRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -180,51 +106,17 @@ Name | Type | Description  | Notes
 
 ## DeleteAlertingChannel
 
-> DeleteAlertingChannel(ctx, id).Execute()
+> DeleteAlertingChannel(ctx, id)
 
 Delete alerting channel
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DeleteAlertingChannel(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DeleteAlertingChannel``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteAlertingChannelRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -246,51 +138,17 @@ Name | Type | Description  | Notes
 
 ## DeleteBuiltInEventSpecification
 
-> DeleteBuiltInEventSpecification(ctx, eventSpecificationId).Execute()
+> DeleteBuiltInEventSpecification(ctx, eventSpecificationId)
 
 Delete built-in event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DeleteBuiltInEventSpecification(context.Background(), eventSpecificationId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DeleteBuiltInEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteBuiltInEventSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**eventSpecificationId** | **string**|  | 
 
 ### Return type
 
@@ -312,110 +170,17 @@ Name | Type | Description  | Notes
 
 ## DeleteCustomEventSpecification
 
-> DeleteCustomEventSpecification(ctx, eventSpecificationId).Execute()
+> DeleteCustomEventSpecification(ctx, eventSpecificationId)
 
 Delete custom event specification
 
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DeleteCustomEventSpecification(context.Background(), eventSpecificationId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DeleteCustomEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteCustomEventSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DeleteCustomPayloadConfiguration
-
-> DeleteCustomPayloadConfiguration(ctx).Execute()
-
-Delete Custom Payload Configuration
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DeleteCustomPayloadConfiguration(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DeleteCustomPayloadConfiguration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteCustomPayloadConfigurationRequest struct via the builder pattern
-
+**eventSpecificationId** | **string**|  | 
 
 ### Return type
 
@@ -437,51 +202,17 @@ Other parameters are passed through a pointer to a apiDeleteCustomPayloadConfigu
 
 ## DeleteWebsiteAlertConfig
 
-> DeleteWebsiteAlertConfig(ctx, id).Execute()
+> DeleteWebsiteAlertConfig(ctx, id)
 
 Delete Website Alert Config
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DeleteWebsiteAlertConfig(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DeleteWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteWebsiteAlertConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -503,55 +234,28 @@ Name | Type | Description  | Notes
 
 ## DisableBuiltInEventSpecification
 
-> BuiltInEventSpecificationWithLastUpdated DisableBuiltInEventSpecification(ctx, eventSpecificationId).Body(body).Execute()
+> BuiltInEventSpecificationWithLastUpdated DisableBuiltInEventSpecification(ctx, eventSpecificationId, optional)
 
 Disable built-in event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DisableBuiltInEventSpecification(context.Background(), eventSpecificationId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DisableBuiltInEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DisableBuiltInEventSpecification`: BuiltInEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.DisableBuiltInEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
+**eventSpecificationId** | **string**|  | 
+ **optional** | ***DisableBuiltInEventSpecificationOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiDisableBuiltInEventSpecificationRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a DisableBuiltInEventSpecificationOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **string** |  | 
+ **body** | **optional.String**|  | 
 
 ### Return type
 
@@ -573,55 +277,28 @@ Name | Type | Description  | Notes
 
 ## DisableCustomEventSpecification
 
-> CustomEventSpecificationWithLastUpdated DisableCustomEventSpecification(ctx, eventSpecificationId).Body(body).Execute()
+> CustomEventSpecificationWithLastUpdated DisableCustomEventSpecification(ctx, eventSpecificationId, optional)
 
 Disable custom event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DisableCustomEventSpecification(context.Background(), eventSpecificationId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DisableCustomEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DisableCustomEventSpecification`: CustomEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.DisableCustomEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
+**eventSpecificationId** | **string**|  | 
+ **optional** | ***DisableCustomEventSpecificationOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiDisableCustomEventSpecificationRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a DisableCustomEventSpecificationOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **string** |  | 
+ **body** | **optional.String**|  | 
 
 ### Return type
 
@@ -643,57 +320,32 @@ Name | Type | Description  | Notes
 
 ## DisableWebsiteAlertConfig
 
-> DisableWebsiteAlertConfig(ctx, id).Body(body).Execute()
+> []WebsiteAlertConfigWithMetadata DisableWebsiteAlertConfig(ctx, id, optional)
 
 Disable Website Alert Config
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.DisableWebsiteAlertConfig(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.DisableWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string**|  | 
+ **optional** | ***DisableWebsiteAlertConfigOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiDisableWebsiteAlertConfigRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a DisableWebsiteAlertConfigOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **string** |  | 
+ **body** | **optional.String**|  | 
 
 ### Return type
 
- (empty response body)
+[**[]WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
 
 ### Authorization
 
@@ -711,55 +363,28 @@ Name | Type | Description  | Notes
 
 ## EnableBuiltInEventSpecification
 
-> BuiltInEventSpecificationWithLastUpdated EnableBuiltInEventSpecification(ctx, eventSpecificationId).Body(body).Execute()
+> BuiltInEventSpecificationWithLastUpdated EnableBuiltInEventSpecification(ctx, eventSpecificationId, optional)
 
 Enable built-in event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.EnableBuiltInEventSpecification(context.Background(), eventSpecificationId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.EnableBuiltInEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnableBuiltInEventSpecification`: BuiltInEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.EnableBuiltInEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
+**eventSpecificationId** | **string**|  | 
+ **optional** | ***EnableBuiltInEventSpecificationOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiEnableBuiltInEventSpecificationRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a EnableBuiltInEventSpecificationOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **string** |  | 
+ **body** | **optional.String**|  | 
 
 ### Return type
 
@@ -781,55 +406,28 @@ Name | Type | Description  | Notes
 
 ## EnableCustomEventSpecification
 
-> CustomEventSpecificationWithLastUpdated EnableCustomEventSpecification(ctx, eventSpecificationId).Body(body).Execute()
+> CustomEventSpecificationWithLastUpdated EnableCustomEventSpecification(ctx, eventSpecificationId, optional)
 
 Enable custom event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.EnableCustomEventSpecification(context.Background(), eventSpecificationId).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.EnableCustomEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnableCustomEventSpecification`: CustomEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.EnableCustomEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
+**eventSpecificationId** | **string**|  | 
+ **optional** | ***EnableCustomEventSpecificationOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiEnableCustomEventSpecificationRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a EnableCustomEventSpecificationOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **string** |  | 
+ **body** | **optional.String**|  | 
 
 ### Return type
 
@@ -851,57 +449,32 @@ Name | Type | Description  | Notes
 
 ## EnableWebsiteAlertConfig
 
-> EnableWebsiteAlertConfig(ctx, id).Body(body).Execute()
+> []WebsiteAlertConfigWithMetadata EnableWebsiteAlertConfig(ctx, id, optional)
 
 Enable Website Alert Config
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.EnableWebsiteAlertConfig(context.Background(), id).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.EnableWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string**|  | 
+ **optional** | ***EnableWebsiteAlertConfigOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiEnableWebsiteAlertConfigRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a EnableWebsiteAlertConfigOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **string** |  | 
+ **body** | **optional.String**|  | 
 
 ### Return type
 
- (empty response body)
+[**[]WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
 
 ### Authorization
 
@@ -919,53 +492,28 @@ Name | Type | Description  | Notes
 
 ## FindActiveWebsiteAlertConfigs
 
-> []WebsiteAlertConfigWithMetadata FindActiveWebsiteAlertConfigs(ctx).WebsiteId(websiteId).AlertIds(alertIds).Execute()
+> []WebsiteAlertConfigWithMetadata FindActiveWebsiteAlertConfigs(ctx, optional)
 
 All Website Alert Configs
 
+Configs are sorted descending by their created date.
 
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    websiteId := "websiteId_example" // string |  (optional)
-    alertIds := []string{"Inner_example"} // []string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.FindActiveWebsiteAlertConfigs(context.Background()).WebsiteId(websiteId).AlertIds(alertIds).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.FindActiveWebsiteAlertConfigs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `FindActiveWebsiteAlertConfigs`: []WebsiteAlertConfigWithMetadata
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.FindActiveWebsiteAlertConfigs`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiFindActiveWebsiteAlertConfigsRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **websiteId** | **string** |  | 
- **alertIds** | **[]string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***FindActiveWebsiteAlertConfigsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a FindActiveWebsiteAlertConfigsOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **optional.String**|  | 
 
 ### Return type
 
@@ -987,61 +535,34 @@ Name | Type | Description  | Notes
 
 ## FindWebsiteAlertConfig
 
-> WebsiteAlertConfigWithMetadata FindWebsiteAlertConfig(ctx, id).ValidOn(validOn).Execute()
+> []WebsiteAlertConfigWithMetadata FindWebsiteAlertConfig(ctx, id, optional)
 
 Get Website Alert Config
 
+Find a Website Alert Config by ID. This will deliver deleted configs too.
 
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    validOn := int64(789) // int64 |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.FindWebsiteAlertConfig(context.Background(), id).ValidOn(validOn).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.FindWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `FindWebsiteAlertConfig`: WebsiteAlertConfigWithMetadata
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.FindWebsiteAlertConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string**|  | 
+ **optional** | ***FindWebsiteAlertConfigOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiFindWebsiteAlertConfigRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a FindWebsiteAlertConfigOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **validOn** | **int64** |  | 
+ **validOn** | **optional.Int64**|  | 
 
 ### Return type
 
-[**WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
+[**[]WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
 
 ### Authorization
 
@@ -1059,55 +580,19 @@ Name | Type | Description  | Notes
 
 ## FindWebsiteAlertConfigVersions
 
-> []ConfigVersion FindWebsiteAlertConfigVersions(ctx, id).Execute()
+> []ConfigVersion FindWebsiteAlertConfigVersions(ctx, id)
 
 Get versions of Website Alert Config
 
+Find all versions of a Website Alert Config by ID. This will deliver deleted configs too. Configs are sorted descending by their created date.
 
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.FindWebsiteAlertConfigVersions(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.FindWebsiteAlertConfigVersions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `FindWebsiteAlertConfigVersions`: []ConfigVersion
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.FindWebsiteAlertConfigVersions`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiFindWebsiteAlertConfigVersionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -1129,53 +614,17 @@ Name | Type | Description  | Notes
 
 ## GetAlert
 
-> AlertingConfigurationWithLastUpdated GetAlert(ctx, id).Execute()
+> AlertingConfigurationWithLastUpdated GetAlert(ctx, id)
 
-Find an Alert Configuration by ID
+Alerting
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetAlert(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetAlert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAlert`: AlertingConfigurationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetAlert`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAlertRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -1197,53 +646,17 @@ Name | Type | Description  | Notes
 
 ## GetAlertingChannel
 
-> AbstractIntegration GetAlertingChannel(ctx, id).Execute()
+> AbstractIntegration GetAlertingChannel(ctx, id)
 
 Alerting channel
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetAlertingChannel(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetAlertingChannel``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAlertingChannel`: AbstractIntegration
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetAlertingChannel`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAlertingChannelRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -1265,49 +678,26 @@ Name | Type | Description  | Notes
 
 ## GetAlertingChannels
 
-> []AbstractIntegration GetAlertingChannels(ctx).Ids(ids).Execute()
+> []AbstractIntegration GetAlertingChannels(ctx, optional)
 
 All alerting channels
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    ids := []string{"Inner_example"} // []string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetAlertingChannels(context.Background()).Ids(ids).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetAlertingChannels``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAlertingChannels`: []AbstractIntegration
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetAlertingChannels`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAlertingChannelsRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | **[]string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***GetAlertingChannelsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetAlertingChannelsOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | [**optional.Interface of []string**](string.md)|  | 
 
 ### Return type
 
@@ -1329,49 +719,26 @@ Name | Type | Description  | Notes
 
 ## GetAlertingChannelsOverview
 
-> []IntegrationOverview GetAlertingChannelsOverview(ctx).Ids(ids).Execute()
+> []IntegrationOverview GetAlertingChannelsOverview(ctx, optional)
 
 Overview over all alerting channels
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    ids := []string{"Inner_example"} // []string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetAlertingChannelsOverview(context.Background()).Ids(ids).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetAlertingChannelsOverview``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAlertingChannelsOverview`: []IntegrationOverview
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetAlertingChannelsOverview`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAlertingChannelsOverviewRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | **[]string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***GetAlertingChannelsOverviewOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetAlertingChannelsOverviewOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | [**optional.Interface of []string**](string.md)|  | 
 
 ### Return type
 
@@ -1393,49 +760,26 @@ Name | Type | Description  | Notes
 
 ## GetAlertingConfigurationInfos
 
-> []ValidatedAlertingChannelInputInfo GetAlertingConfigurationInfos(ctx).IntegrationId(integrationId).Execute()
+> []ValidatedAlertingChannelInputInfo GetAlertingConfigurationInfos(ctx, optional)
 
 All alerting configuration info
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    integrationId := "integrationId_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetAlertingConfigurationInfos(context.Background()).IntegrationId(integrationId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetAlertingConfigurationInfos``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAlertingConfigurationInfos`: []ValidatedAlertingChannelInputInfo
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetAlertingConfigurationInfos`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAlertingConfigurationInfosRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***GetAlertingConfigurationInfosOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetAlertingConfigurationInfosOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **integrationId** | **optional.String**|  | 
 
 ### Return type
 
@@ -1457,44 +801,13 @@ Name | Type | Description  | Notes
 
 ## GetAlerts
 
-> []ValidatedAlertingConfiguration GetAlerts(ctx).Execute()
+> []ValidatedAlertingConfiguration GetAlerts(ctx, )
 
-Get all Alert Configurations
+All Alerting
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetAlerts(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetAlerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAlerts`: []ValidatedAlertingConfiguration
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetAlerts`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAlertsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -1516,53 +829,17 @@ Other parameters are passed through a pointer to a apiGetAlertsRequest struct vi
 
 ## GetBuiltInEventSpecification
 
-> BuiltInEventSpecification GetBuiltInEventSpecification(ctx, eventSpecificationId).Execute()
+> BuiltInEventSpecification GetBuiltInEventSpecification(ctx, eventSpecificationId)
 
 Built-in event specifications
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetBuiltInEventSpecification(context.Background(), eventSpecificationId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetBuiltInEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetBuiltInEventSpecification`: BuiltInEventSpecification
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetBuiltInEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetBuiltInEventSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**eventSpecificationId** | **string**|  | 
 
 ### Return type
 
@@ -1584,49 +861,26 @@ Name | Type | Description  | Notes
 
 ## GetBuiltInEventSpecifications
 
-> []BuiltInEventSpecificationWithLastUpdated GetBuiltInEventSpecifications(ctx).Ids(ids).Execute()
+> []BuiltInEventSpecificationWithLastUpdated GetBuiltInEventSpecifications(ctx, optional)
 
 All built-in event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    ids := []string{"Inner_example"} // []string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetBuiltInEventSpecifications(context.Background()).Ids(ids).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetBuiltInEventSpecifications``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetBuiltInEventSpecifications`: []BuiltInEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetBuiltInEventSpecifications`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetBuiltInEventSpecificationsRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | **[]string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***GetBuiltInEventSpecificationsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetBuiltInEventSpecificationsOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | [**optional.Interface of []string**](string.md)|  | 
 
 ### Return type
 
@@ -1648,53 +902,17 @@ Name | Type | Description  | Notes
 
 ## GetCustomEventSpecification
 
-> CustomEventSpecificationWithLastUpdated GetCustomEventSpecification(ctx, eventSpecificationId).Execute()
+> CustomEventSpecificationWithLastUpdated GetCustomEventSpecification(ctx, eventSpecificationId)
 
 Custom event specification
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetCustomEventSpecification(context.Background(), eventSpecificationId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetCustomEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomEventSpecification`: CustomEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetCustomEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCustomEventSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**eventSpecificationId** | **string**|  | 
 
 ### Return type
 
@@ -1716,44 +934,13 @@ Name | Type | Description  | Notes
 
 ## GetCustomEventSpecifications
 
-> []CustomEventSpecificationWithLastUpdated GetCustomEventSpecifications(ctx).Execute()
+> []CustomEventSpecificationWithLastUpdated GetCustomEventSpecifications(ctx, )
 
 All custom event specifications
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetCustomEventSpecifications(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetCustomEventSpecifications``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomEventSpecifications`: []CustomEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetCustomEventSpecifications`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCustomEventSpecificationsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -1773,164 +960,15 @@ Other parameters are passed through a pointer to a apiGetCustomEventSpecificatio
 [[Back to README]](../README.md)
 
 
-## GetCustomPayloadConfigurations
-
-> CustomPayloadWithLastUpdated GetCustomPayloadConfigurations(ctx).Execute()
-
-Get Custom Payload Configuration
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetCustomPayloadConfigurations(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetCustomPayloadConfigurations``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomPayloadConfigurations`: CustomPayloadWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetCustomPayloadConfigurations`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCustomPayloadConfigurationsRequest struct via the builder pattern
-
-
-### Return type
-
-[**CustomPayloadWithLastUpdated**](CustomPayloadWithLastUpdated.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetCustomPayloadTagCatalog
-
-> TagCatalog GetCustomPayloadTagCatalog(ctx).Execute()
-
-Get tag catalog for custom payload in alerting
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetCustomPayloadTagCatalog(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetCustomPayloadTagCatalog``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomPayloadTagCatalog`: TagCatalog
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetCustomPayloadTagCatalog`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCustomPayloadTagCatalogRequest struct via the builder pattern
-
-
-### Return type
-
-[**TagCatalog**](TagCatalog.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetEventSpecificationInfos
 
-> []EventSpecificationInfo GetEventSpecificationInfos(ctx).Execute()
+> []EventSpecificationInfo GetEventSpecificationInfos(ctx, )
 
 Summary of all built-in and custom event specifications
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetEventSpecificationInfos(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetEventSpecificationInfos``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetEventSpecificationInfos`: []EventSpecificationInfo
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetEventSpecificationInfos`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetEventSpecificationInfosRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -1952,51 +990,19 @@ Other parameters are passed through a pointer to a apiGetEventSpecificationInfos
 
 ## GetEventSpecificationInfosByIds
 
-> []EventSpecificationInfo GetEventSpecificationInfosByIds(ctx).RequestBody(requestBody).Execute()
+> []EventSpecificationInfo GetEventSpecificationInfosByIds(ctx, requestBody)
 
 All built-in and custom event specifications
 
+Summary of all built-in and custom event specifications by IDs
 
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    requestBody := []string{"Property_example"} // []string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetEventSpecificationInfosByIds(context.Background()).RequestBody(requestBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetEventSpecificationInfosByIds``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetEventSpecificationInfosByIds`: []EventSpecificationInfo
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetEventSpecificationInfosByIds`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetEventSpecificationInfosByIdsRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **[]string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**requestBody** | [**[]string**](string.md)|  | 
 
 ### Return type
 
@@ -2018,44 +1024,13 @@ Name | Type | Description  | Notes
 
 ## GetSystemRules
 
-> []SystemRuleLabel GetSystemRules(ctx).Execute()
+> []SystemRuleLabel GetSystemRules(ctx, )
 
 All system rules for custom event specifications
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.GetSystemRules(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.GetSystemRules``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSystemRules`: []SystemRuleLabel
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.GetSystemRules`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSystemRulesRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -2075,123 +1050,20 @@ Other parameters are passed through a pointer to a apiGetSystemRulesRequest stru
 [[Back to README]](../README.md)
 
 
-## PostCustomEventSpecification
-
-> CustomEventSpecificationWithLastUpdated PostCustomEventSpecification(ctx).CustomEventSpecification(customEventSpecification).Execute()
-
-Create new custom event specification
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    customEventSpecification := *openapiclient.NewCustomEventSpecification("EntityType_example", "Name_example", []openapiclient.AbstractRule{*openapiclient.NewAbstractRule("RuleType_example")}) // CustomEventSpecification | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.PostCustomEventSpecification(context.Background()).CustomEventSpecification(customEventSpecification).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.PostCustomEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PostCustomEventSpecification`: CustomEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.PostCustomEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostCustomEventSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customEventSpecification** | [**CustomEventSpecification**](CustomEventSpecification.md) |  | 
-
-### Return type
-
-[**CustomEventSpecificationWithLastUpdated**](CustomEventSpecificationWithLastUpdated.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PutAlert
 
-> AlertingConfigurationWithLastUpdated PutAlert(ctx, id).AlertingConfiguration(alertingConfiguration).Execute()
+> AlertingConfigurationWithLastUpdated PutAlert(ctx, id, alertingConfiguration)
 
-Update Alert Configuration
+Update alerting
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    alertingConfiguration := *openapiclient.NewAlertingConfiguration("AlertName_example", []openapiclient.StaticStringField{*openapiclient.NewStaticStringField("Value_example", "Key_example", "Type_example")}, *openapiclient.NewEventFilteringConfiguration(), "Id_example", []string{"IntegrationIds_example"}) // AlertingConfiguration | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.PutAlert(context.Background(), id).AlertingConfiguration(alertingConfiguration).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.PutAlert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PutAlert`: AlertingConfigurationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.PutAlert`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutAlertRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **alertingConfiguration** | [**AlertingConfiguration**](AlertingConfiguration.md) |  | 
+**id** | **string**|  | 
+**alertingConfiguration** | [**AlertingConfiguration**](AlertingConfiguration.md)|  | 
 
 ### Return type
 
@@ -2213,53 +1085,18 @@ Name | Type | Description  | Notes
 
 ## PutAlertingChannel
 
-> PutAlertingChannel(ctx, id).AbstractIntegration(abstractIntegration).Execute()
+> PutAlertingChannel(ctx, id, abstractIntegration)
 
 Update alerting channel
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    abstractIntegration := *openapiclient.NewAbstractIntegration("Id_example", "Kind_example", "Name_example") // AbstractIntegration | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.PutAlertingChannel(context.Background(), id).AbstractIntegration(abstractIntegration).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.PutAlertingChannel``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutAlertingChannelRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **abstractIntegration** | [**AbstractIntegration**](AbstractIntegration.md) |  | 
+**id** | **string**|  | 
+**abstractIntegration** | [**AbstractIntegration**](AbstractIntegration.md)|  | 
 
 ### Return type
 
@@ -2281,59 +1118,20 @@ Name | Type | Description  | Notes
 
 ## PutCustomEventSpecification
 
-> CustomEventSpecificationWithLastUpdated PutCustomEventSpecification(ctx, eventSpecificationId).CustomEventSpecification(customEventSpecification).AllowRestore(allowRestore).Execute()
+> CustomEventSpecificationWithLastUpdated PutCustomEventSpecification(ctx, eventSpecificationId, customEventSpecification)
 
-Create or update custom event specification
+Create or Update custom event specification
 
+This endpoint creates or updates the Custom Event Specification   ## Mandatory Parameters:  - **eventSpecificationId(Path Parameter):** A unique identifier for each custom event  - **id:** Same as the eventSpecificationId  - **name:** Name for the custom event  - **entityType:** Name of tha available plugins for the selected source  - **rules.ruleType:** Type of the rule being set for the custom event  ### Rule-type specific parameters  Depending on the chosen `ruleType`, there are further required parameters:  #### Threshold Rule using a dynamic built-in metric by pattern :  - **rules.conditionOperator:** Conditional operator for the aggregation for the provided time window  - **rules.metricPattern.prefix:** Prefix pattern for the metric  - **rules.metricPattern.operator:** Operator for matching the metric  ``` curl --request PUT 'https://<HOST>/api/events/settings/event-specifications/custom/09876543225' \\ --header 'Authorization: apiToken <Token>' \\ --header 'Content-Type: application/json' \\ --data-raw '{ \"id\" :\"09876543225\", \"description\":\"Event for OpenAPI documentation\", \"enabled\":true,\"entityType\":\"host\",\"expirationTime\":\"60000\",\"name\":\"Event for OpenAPI documentation\", \"query\":<Query>,  \"rules\":[{\"aggregation\":\"sum\",\"conditionOperator\":\">\", \"conditionValue\":0.1, \"metricName\":null, \"metricPattern\":{\"prefix\":\"fs\", \"postfix\":\"free\", \"operator\":\"endsWith\", \"placeholder\":\"/xvda1\"}, \"rollup\":null, \"ruleType\":\"threshold\", \"severity\":10, \"window\":30000}], \"triggering\":false }' ``` The above example creates a custom event that matches disk devices that end with \"/xvda1\" for the metric \"fs.{device}.free\" for any host in scope.  #### Threshold Rule using fixed metric :  - **rules.conditionOperator:** Conditional operator for the aggregation for the provided time window  - **rules.metricName:** Metric name for the event  ``` curl --request PUT 'https://<Host>/api/events/settings/event-specifications/custom/09876543226' \\ --header 'Authorization: apiToken <Token>' \\ --header 'Content-Type: application/json' \\ --data-raw '{ \"id\" :\"09876543226\", \"description\":\"Event for OpenAPI documentation fixed Metric\", \"enabled\":true,\"entityType\":\"host\",\"expirationTime\":\"60000\", \"name\":\"Event for OpenAPI documentation fixed metric\",\"rules\":[{\"aggregation\":\"sum\",\"conditionOperator\":\">\", \"conditionValue\":0.1, \"metricName\":\"fs./dev/xvda1.free\",  \"rollup\":null, \"ruleType\":\"threshold\", \"severity\":10, \"window\":30000}], \"triggering\":false }' ```  #### System Rule:  - **rules.systemRuleId:** Id of the System Rule being set   ``` curl --request PUT 'https://<Host>/api/events/settings/event-specifications/custom/09876543227' \\ --header 'Authorization: apiToken <Token>' \\ --header 'Content-Type: application/json' \\ --data-raw '{ \"id\" :\"09876543227\", \"description\":\"Event for OpenAPI documentation System Rule\", \"enabled\":true,\"entityType\":\"any\",\"expirationTime\":\"60000\", \"name\":\"Event for OpenAPI documentation System Rule\", \"rules\":[{\"ruleType\":\"system\", \"systemRuleId\":\"entity.offline\",\"severity\":10}], \"triggering\":false }' ```  #### Entity Verification Rule:  - **rules.matchingEntityType:** Type of the Entity - **rules.matchingOperator:** Operator for matching the Entity name - **rules.matchingEntityLabel:** Name Pattern for the Entity  ``` curl --request PUT 'https://<Host>/api/events/settings/event-specifications/custom/09876543228' \\ --header 'Authorization: apiToken <Token>' \\ --header 'Content-Type: application/json' \\ --data-raw '{ \"id\" :\"09876543228\", \"description\":\"Event for OpenAPI Entity Verification Rule\", \"enabled\":true,\"entityType\":\"host\",\"expirationTime\":\"60000\", \"name\":\"Event for OpenAPI Entity Verification Rule\", \"rules\":[{\"matchingEntityLabel\":\"test\", \"matchingEntityType\":\"jvmRuntimePlatform\",\"matchingOperator\":\"startsWith\",\"offlineDuration\":1800000,  \"ruleType\":\"entity_verification\",\"severity\": 5}], \"triggering\":false }' `` 
 
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    eventSpecificationId := "eventSpecificationId_example" // string | 
-    customEventSpecification := *openapiclient.NewCustomEventSpecification("EntityType_example", "Name_example", []openapiclient.AbstractRule{*openapiclient.NewAbstractRule("RuleType_example")}) // CustomEventSpecification | 
-    allowRestore := true // bool |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.PutCustomEventSpecification(context.Background(), eventSpecificationId).CustomEventSpecification(customEventSpecification).AllowRestore(allowRestore).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.PutCustomEventSpecification``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PutCustomEventSpecification`: CustomEventSpecificationWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.PutCustomEventSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventSpecificationId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutCustomEventSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **customEventSpecification** | [**CustomEventSpecification**](CustomEventSpecification.md) |  | 
- **allowRestore** | **bool** |  | 
+**eventSpecificationId** | **string**|  | 
+**customEventSpecification** | [**CustomEventSpecification**](CustomEventSpecification.md)|  | 
 
 ### Return type
 
@@ -2353,120 +1151,19 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RestoreWebsiteAlertConfig
+## SendTestAlerting
 
-> RestoreWebsiteAlertConfig(ctx, id, created).Body(body).Execute()
+> SendTestAlerting(ctx, abstractIntegration)
 
-Restore Website Alert Config
+Test alerting channel
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    created := int64(789) // int64 | 
-    body := "body_example" // string |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.RestoreWebsiteAlertConfig(context.Background(), id, created).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.RestoreWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-**created** | **int64** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRestoreWebsiteAlertConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **body** | **string** |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SendTestAlerting
-
-> SendTestAlerting(ctx).AbstractIntegration(abstractIntegration).Execute()
-
-Test alerting channel
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    abstractIntegration := *openapiclient.NewAbstractIntegration("Id_example", "Kind_example", "Name_example") // AbstractIntegration | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.SendTestAlerting(context.Background()).AbstractIntegration(abstractIntegration).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.SendTestAlerting``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSendTestAlertingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **abstractIntegration** | [**AbstractIntegration**](AbstractIntegration.md) |  | 
+**abstractIntegration** | [**AbstractIntegration**](AbstractIntegration.md)|  | 
 
 ### Return type
 
@@ -2488,125 +1185,22 @@ Name | Type | Description  | Notes
 
 ## UpdateWebsiteAlertConfig
 
-> WebsiteAlertConfigWithMetadata UpdateWebsiteAlertConfig(ctx, id).WebsiteAlertConfig(websiteAlertConfig).Execute()
+> []WebsiteAlertConfigWithMetadata UpdateWebsiteAlertConfig(ctx, id, websiteAlertConfig)
 
 Update Website Alert Config
 
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    websiteAlertConfig := *openapiclient.NewWebsiteAlertConfig([]string{"AlertChannelIds_example"}, []openapiclient.CustomPayloadField{*openapiclient.NewCustomPayloadField("Key_example", "Type_example")}, "Description_example", int32(123), "Name_example", *openapiclient.NewWebsiteAlertRule("AlertType_example", "MetricName_example"), *openapiclient.NewTagFilterExpressionElement("Type_example"), *openapiclient.NewThreshold("Operator_example", "Type_example"), *openapiclient.NewWebsiteTimeThreshold("Type_example"), "WebsiteId_example") // WebsiteAlertConfig | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.UpdateWebsiteAlertConfig(context.Background(), id).WebsiteAlertConfig(websiteAlertConfig).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.UpdateWebsiteAlertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateWebsiteAlertConfig`: WebsiteAlertConfigWithMetadata
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.UpdateWebsiteAlertConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUpdateWebsiteAlertConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **websiteAlertConfig** | [**WebsiteAlertConfig**](WebsiteAlertConfig.md) |  | 
+**id** | **string**|  | 
+**websiteAlertConfig** | [**WebsiteAlertConfig**](WebsiteAlertConfig.md)|  | 
 
 ### Return type
 
-[**WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## UpsertCustomPayloadConfiguration
-
-> []CustomPayloadWithLastUpdated UpsertCustomPayloadConfiguration(ctx).CustomPayloadConfiguration(customPayloadConfiguration).Execute()
-
-Create / Update Custom Payload Configuration
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    customPayloadConfiguration := *openapiclient.NewCustomPayloadConfiguration([]openapiclient.CustomPayloadField{*openapiclient.NewCustomPayloadField("Key_example", "Type_example")}) // CustomPayloadConfiguration | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventSettingsApi.UpsertCustomPayloadConfiguration(context.Background()).CustomPayloadConfiguration(customPayloadConfiguration).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventSettingsApi.UpsertCustomPayloadConfiguration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpsertCustomPayloadConfiguration`: []CustomPayloadWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `EventSettingsApi.UpsertCustomPayloadConfiguration`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUpsertCustomPayloadConfigurationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customPayloadConfiguration** | [**CustomPayloadConfiguration**](CustomPayloadConfiguration.md) |  | 
-
-### Return type
-
-[**[]CustomPayloadWithLastUpdated**](CustomPayloadWithLastUpdated.md)
+[**[]WebsiteAlertConfigWithMetadata**](WebsiteAlertConfigWithMetadata.md)
 
 ### Authorization
 

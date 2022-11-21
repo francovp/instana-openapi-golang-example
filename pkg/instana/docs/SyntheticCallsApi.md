@@ -12,42 +12,13 @@ Method | HTTP request | Description
 
 ## DeleteSyntheticCall
 
-> DeleteSyntheticCall(ctx).Execute()
+> DeleteSyntheticCall(ctx, )
 
 Delete synthetic call configurations
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SyntheticCallsApi.DeleteSyntheticCall(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SyntheticCallsApi.DeleteSyntheticCall``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSyntheticCallRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -69,44 +40,13 @@ Other parameters are passed through a pointer to a apiDeleteSyntheticCallRequest
 
 ## GetSyntheticCalls
 
-> SyntheticCallWithDefaultsConfig GetSyntheticCalls(ctx).Execute()
+> SyntheticCallWithDefaultsConfig GetSyntheticCalls(ctx, )
 
 Synthetic call configurations
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SyntheticCallsApi.GetSyntheticCalls(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SyntheticCallsApi.GetSyntheticCalls``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSyntheticCalls`: SyntheticCallWithDefaultsConfig
-    fmt.Fprintf(os.Stdout, "Response from `SyntheticCallsApi.GetSyntheticCalls`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSyntheticCallsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -128,47 +68,17 @@ Other parameters are passed through a pointer to a apiGetSyntheticCallsRequest s
 
 ## UpdateSyntheticCall
 
-> UpdateSyntheticCall(ctx).SyntheticCallConfig(syntheticCallConfig).Execute()
+> UpdateSyntheticCall(ctx, syntheticCallConfig)
 
 Update synthetic call configurations
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    syntheticCallConfig := *openapiclient.NewSyntheticCallConfig([]openapiclient.SyntheticCallRule{*openapiclient.NewSyntheticCallRule(*openapiclient.NewMatchExpressionDTO("Type_example"), "Name_example")}) // SyntheticCallConfig | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SyntheticCallsApi.UpdateSyntheticCall(context.Background()).SyntheticCallConfig(syntheticCallConfig).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SyntheticCallsApi.UpdateSyntheticCall``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUpdateSyntheticCallRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **syntheticCallConfig** | [**SyntheticCallConfig**](SyntheticCallConfig.md) |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**syntheticCallConfig** | [**SyntheticCallConfig**](SyntheticCallConfig.md)|  | 
 
 ### Return type
 
