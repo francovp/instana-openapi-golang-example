@@ -4,61 +4,37 @@ All URIs are relative to *https://unit-tenant.instana.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetInvitations**](UserApi.md#GetInvitations) | **Get** /api/settings/invitations | All pending invitations
-[**GetUserById**](UserApi.md#GetUserById) | **Get** /api/settings/users/{userId} | Get single user
+[**DeleteRole**](UserApi.md#DeleteRole) | **Delete** /api/settings/roles/{roleId} | Delete role
+[**GetInvitations**](UserApi.md#GetInvitations) | **Get** /api/settings/users/invitations | All pending invitations
+[**GetRole**](UserApi.md#GetRole) | **Get** /api/settings/roles/{roleId} | Role
+[**GetRoles**](UserApi.md#GetRoles) | **Get** /api/settings/roles | All roles
 [**GetUsers**](UserApi.md#GetUsers) | **Get** /api/settings/users | All users (without invitations)
 [**GetUsersIncludingInvitations**](UserApi.md#GetUsersIncludingInvitations) | **Get** /api/settings/users/overview | All users (incl. invitations)
-[**InviteUsers**](UserApi.md#InviteUsers) | **Post** /api/settings/invitations | Send user invitations
+[**PutRole**](UserApi.md#PutRole) | **Put** /api/settings/roles/{roleId} | Create or update role
 [**RemoveUserFromTenant**](UserApi.md#RemoveUserFromTenant) | **Delete** /api/settings/users/{userId} | Remove user from tenant
-[**RevokePendingInvitation**](UserApi.md#RevokePendingInvitation) | **Delete** /api/settings/invitations | Revoke pending invitation
-[**UpdateUser**](UserApi.md#UpdateUser) | **Put** /api/settings/users/{email} | Change user name of single user
+[**RevokePendingInvitations**](UserApi.md#RevokePendingInvitations) | **Delete** /api/settings/users/invitations | Revoke pending invitation
+[**SendInvitation**](UserApi.md#SendInvitation) | **Post** /api/settings/users/invitations | Send user invitation
+[**SetRole**](UserApi.md#SetRole) | **Put** /api/settings/users/{userId}/role | Add user to role
 
 
 
-## GetInvitations
+## DeleteRole
 
-> []InvitationResult GetInvitations(ctx).Execute()
+> DeleteRole(ctx, roleId)
 
-All pending invitations
+Delete role
 
-### Example
+### Required Parameters
 
-```go
-package main
 
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetInvitations(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetInvitations``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetInvitations`: []InvitationResult
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.GetInvitations`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetInvitationsRequest struct via the builder pattern
-
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**roleId** | **string**|  | 
 
 ### Return type
 
-[**[]InvitationResult**](InvitationResult.md)
+ (empty response body)
 
 ### Authorization
 
@@ -74,55 +50,15 @@ Other parameters are passed through a pointer to a apiGetInvitationsRequest stru
 [[Back to README]](../README.md)
 
 
-## GetUserById
+## GetInvitations
 
-> []UserResult GetUserById(ctx, userId).Execute()
+> []UserResult GetInvitations(ctx, )
 
-Get single user
+All pending invitations
 
-### Example
+### Required Parameters
 
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    userId := "userId_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetUserById(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUserById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetUserById`: []UserResult
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.GetUserById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetUserByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -142,46 +78,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetUsers
+## GetRole
 
-> []UserResult GetUsers(ctx).Execute()
+> Role GetRole(ctx, roleId)
 
-All users (without invitations)
+Role
 
-### Example
+### Required Parameters
 
-```go
-package main
 
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**roleId** | **string**|  | 
 
-func main() {
+### Return type
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetUsers(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetUsers`: []UserResult
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.GetUsers`: %v\n", resp)
-}
-```
+[**Role**](Role.md)
 
-### Path Parameters
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRoles
+
+> []Role GetRoles(ctx, )
+
+All roles
+
+### Required Parameters
 
 This endpoint does not need any parameter.
 
-### Other Parameters
+### Return type
 
-Other parameters are passed through a pointer to a apiGetUsersRequest struct via the builder pattern
+[**[]Role**](Role.md)
 
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetUsers
+
+> []UserResult GetUsers(ctx, )
+
+All users (without invitations)
+
+### Required Parameters
+
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -203,44 +168,13 @@ Other parameters are passed through a pointer to a apiGetUsersRequest struct via
 
 ## GetUsersIncludingInvitations
 
-> UsersResult GetUsersIncludingInvitations(ctx).Execute()
+> UsersResult GetUsersIncludingInvitations(ctx, )
 
 All users (incl. invitations)
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.GetUsersIncludingInvitations(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUsersIncludingInvitations``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetUsersIncludingInvitations`: UsersResult
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.GetUsersIncludingInvitations`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetUsersIncludingInvitationsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -260,55 +194,24 @@ Other parameters are passed through a pointer to a apiGetUsersIncludingInvitatio
 [[Back to README]](../README.md)
 
 
-## InviteUsers
+## PutRole
 
-> []InvitationResponse InviteUsers(ctx).Invitation(invitation).Execute()
+> Role PutRole(ctx, roleId, role)
 
-Send user invitations
+Create or update role
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    invitation := []openapiclient.Invitation{*openapiclient.NewInvitation("Email_example", "GroupId_example")} // []Invitation | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.InviteUsers(context.Background()).Invitation(invitation).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.InviteUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `InviteUsers`: []InvitationResponse
-    fmt.Fprintf(os.Stdout, "Response from `UserApi.InviteUsers`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiInviteUsersRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invitation** | [**[]Invitation**](Invitation.md) |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**roleId** | **string**|  | 
+**role** | [**Role**](Role.md)|  | 
 
 ### Return type
 
-[**[]InvitationResponse**](InvitationResponse.md)
+[**Role**](Role.md)
 
 ### Authorization
 
@@ -326,51 +229,17 @@ Name | Type | Description  | Notes
 
 ## RemoveUserFromTenant
 
-> RemoveUserFromTenant(ctx, userId).Execute()
+> RemoveUserFromTenant(ctx, userId)
 
 Remove user from tenant
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    userId := "userId_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.RemoveUserFromTenant(context.Background(), userId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.RemoveUserFromTenant``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRemoveUserFromTenantRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**userId** | **string**|  | 
 
 ### Return type
 
@@ -390,49 +259,28 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RevokePendingInvitation
+## RevokePendingInvitations
 
-> RevokePendingInvitation(ctx).Email(email).Execute()
+> RevokePendingInvitations(ctx, optional)
 
 Revoke pending invitation
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    email := "email_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.RevokePendingInvitation(context.Background()).Email(email).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.RevokePendingInvitation``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRevokePendingInvitationRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string** |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***RevokePendingInvitationsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a RevokePendingInvitationsOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **optional.String**|  | 
 
 ### Return type
 
@@ -452,55 +300,29 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateUser
+## SendInvitation
 
-> UpdateUser(ctx, email).EditUser(editUser).Execute()
+> SendInvitation(ctx, optional)
 
-Change user name of single user
+Send user invitation
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    email := "email_example" // string | 
-    editUser := *openapiclient.NewEditUser("FullName_example") // EditUser |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.UpdateUser(context.Background(), email).EditUser(editUser).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserApi.UpdateUser``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**email** | **string** |  | 
+ **optional** | ***SendInvitationOpts** | optional parameters | nil if no parameters
 
-### Other Parameters
+### Optional Parameters
 
-Other parameters are passed through a pointer to a apiUpdateUserRequest struct via the builder pattern
+Optional parameters are passed through a pointer to a SendInvitationOpts struct
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **editUser** | [**EditUser**](EditUser.md) |  | 
+ **email** | **optional.String**|  | 
+ **roleId** | **optional.String**|  | 
 
 ### Return type
 
@@ -512,7 +334,50 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetRole
+
+> SetRole(ctx, userId, optional)
+
+Add user to role
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string**|  | 
+ **optional** | ***SetRoleOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a SetRoleOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **roleId** | **optional.String**|  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

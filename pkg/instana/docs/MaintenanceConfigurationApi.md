@@ -13,51 +13,17 @@ Method | HTTP request | Description
 
 ## DeleteMaintenanceConfig
 
-> DeleteMaintenanceConfig(ctx, id).Execute()
+> DeleteMaintenanceConfig(ctx, id)
 
 Delete maintenance configuration
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MaintenanceConfigurationApi.DeleteMaintenanceConfig(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MaintenanceConfigurationApi.DeleteMaintenanceConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteMaintenanceConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -79,53 +45,17 @@ Name | Type | Description  | Notes
 
 ## GetMaintenanceConfig
 
-> MaintenanceConfigWithLastUpdated GetMaintenanceConfig(ctx, id).Execute()
+> MaintenanceConfigWithLastUpdated GetMaintenanceConfig(ctx, id)
 
 Maintenance configuration
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MaintenanceConfigurationApi.GetMaintenanceConfig(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MaintenanceConfigurationApi.GetMaintenanceConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMaintenanceConfig`: MaintenanceConfigWithLastUpdated
-    fmt.Fprintf(os.Stdout, "Response from `MaintenanceConfigurationApi.GetMaintenanceConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetMaintenanceConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
+**id** | **string**|  | 
 
 ### Return type
 
@@ -147,44 +77,13 @@ Name | Type | Description  | Notes
 
 ## GetMaintenanceConfigs
 
-> []ValidatedMaintenanceConfigWithStatus GetMaintenanceConfigs(ctx).Execute()
+> []ValidatedMaintenanceConfigWithStatus GetMaintenanceConfigs(ctx, )
 
 All maintenance configurations
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MaintenanceConfigurationApi.GetMaintenanceConfigs(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MaintenanceConfigurationApi.GetMaintenanceConfigs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetMaintenanceConfigs`: []ValidatedMaintenanceConfigWithStatus
-    fmt.Fprintf(os.Stdout, "Response from `MaintenanceConfigurationApi.GetMaintenanceConfigs`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetMaintenanceConfigsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -206,53 +105,18 @@ Other parameters are passed through a pointer to a apiGetMaintenanceConfigsReque
 
 ## PutMaintenanceConfig
 
-> PutMaintenanceConfig(ctx, id).MaintenanceConfig(maintenanceConfig).Execute()
+> PutMaintenanceConfig(ctx, id, maintenanceConfig)
 
 Create or update maintenance configuration
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := "id_example" // string | 
-    maintenanceConfig := *openapiclient.NewMaintenanceConfig("Id_example", "Name_example", "Query_example") // MaintenanceConfig | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MaintenanceConfigurationApi.PutMaintenanceConfig(context.Background(), id).MaintenanceConfig(maintenanceConfig).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MaintenanceConfigurationApi.PutMaintenanceConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutMaintenanceConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **maintenanceConfig** | [**MaintenanceConfig**](MaintenanceConfig.md) |  | 
+**id** | **string**|  | 
+**maintenanceConfig** | [**MaintenanceConfig**](MaintenanceConfig.md)|  | 
 
 ### Return type
 

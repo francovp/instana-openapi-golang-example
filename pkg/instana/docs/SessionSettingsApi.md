@@ -5,49 +5,20 @@ All URIs are relative to *https://unit-tenant.instana.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteSessionSettings**](SessionSettingsApi.md#DeleteSessionSettings) | **Delete** /api/settings/session | Delete session settings
-[**GetSessionSettings**](SessionSettingsApi.md#GetSessionSettings) | **Get** /api/settings/session | Get session settings
+[**GetSessionSettings**](SessionSettingsApi.md#GetSessionSettings) | **Get** /api/settings/session | Session settings
 [**SetSessionSettings**](SessionSettingsApi.md#SetSessionSettings) | **Put** /api/settings/session | Configure session settings
 
 
 
 ## DeleteSessionSettings
 
-> DeleteSessionSettings(ctx).Execute()
+> DeleteSessionSettings(ctx, )
 
 Delete session settings
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionSettingsApi.DeleteSessionSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionSettingsApi.DeleteSessionSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSessionSettingsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -69,44 +40,13 @@ Other parameters are passed through a pointer to a apiDeleteSessionSettingsReque
 
 ## GetSessionSettings
 
-> SessionSettings GetSessionSettings(ctx).Execute()
+> SessionSettings GetSessionSettings(ctx, )
 
-Get session settings
+Session settings
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionSettingsApi.GetSessionSettings(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionSettingsApi.GetSessionSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSessionSettings`: SessionSettings
-    fmt.Fprintf(os.Stdout, "Response from `SessionSettingsApi.GetSessionSettings`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSessionSettingsRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -128,49 +68,26 @@ Other parameters are passed through a pointer to a apiGetSessionSettingsRequest 
 
 ## SetSessionSettings
 
-> SessionSettings SetSessionSettings(ctx).SessionSettings(sessionSettings).Execute()
+> SessionSettings SetSessionSettings(ctx, optional)
 
 Configure session settings
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    sessionSettings := *openapiclient.NewSessionSettings() // SessionSettings |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SessionSettingsApi.SetSessionSettings(context.Background()).SessionSettings(sessionSettings).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SessionSettingsApi.SetSessionSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SetSessionSettings`: SessionSettings
-    fmt.Fprintf(os.Stdout, "Response from `SessionSettingsApi.SetSessionSettings`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSetSessionSettingsRequest struct via the builder pattern
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sessionSettings** | [**SessionSettings**](SessionSettings.md) |  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***SetSessionSettingsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a SetSessionSettingsOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sessionSettings** | [**optional.Interface of SessionSettings**](SessionSettings.md)|  | 
 
 ### Return type
 

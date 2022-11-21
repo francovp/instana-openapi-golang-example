@@ -11,46 +11,15 @@ Method | HTTP request | Description
 
 ## GetHealthState
 
-> HealthState GetHealthState(ctx).Execute()
+> HealthState GetHealthState(ctx, )
 
 Basic health traffic light
 
+The returned JSON object will provide a health property which contains a simple traffic light (GREEN/YELLO/RED). For any non-Green-state a list  of reasons will be provided in the messages array.  Possible messages: * No data being processed * No data arriving from agents 
 
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HealthApi.GetHealthState(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.GetHealthState``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetHealthState`: HealthState
-    fmt.Fprintf(os.Stdout, "Response from `HealthApi.GetHealthState`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetHealthStateRequest struct via the builder pattern
-
 
 ### Return type
 
@@ -72,44 +41,13 @@ Other parameters are passed through a pointer to a apiGetHealthStateRequest stru
 
 ## GetVersion
 
-> InstanaVersionInfo GetVersion(ctx).Execute()
+> InstanaVersionInfo GetVersion(ctx, )
 
 API version information
 
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HealthApi.GetVersion(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.GetVersion``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetVersion`: InstanaVersionInfo
-    fmt.Fprintf(os.Stdout, "Response from `HealthApi.GetVersion`: %v\n", resp)
-}
-```
-
-### Path Parameters
+### Required Parameters
 
 This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetVersionRequest struct via the builder pattern
-
 
 ### Return type
 
