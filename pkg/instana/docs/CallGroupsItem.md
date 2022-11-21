@@ -4,10 +4,115 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Timestamp** | **int64** |  | [optional] 
 **Cursor** | [**IngestionOffsetCursor**](IngestionOffsetCursor.md) |  | 
 **Metrics** | [**map[string][][]float32**](array.md) |  | 
+**Name** | **string** |  | 
+**Timestamp** | Pointer to **int64** |  | [optional] 
+
+## Methods
+
+### NewCallGroupsItem
+
+`func NewCallGroupsItem(cursor IngestionOffsetCursor, metrics map[string][][]float32, name string, ) *CallGroupsItem`
+
+NewCallGroupsItem instantiates a new CallGroupsItem object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewCallGroupsItemWithDefaults
+
+`func NewCallGroupsItemWithDefaults() *CallGroupsItem`
+
+NewCallGroupsItemWithDefaults instantiates a new CallGroupsItem object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetCursor
+
+`func (o *CallGroupsItem) GetCursor() IngestionOffsetCursor`
+
+GetCursor returns the Cursor field if non-nil, zero value otherwise.
+
+### GetCursorOk
+
+`func (o *CallGroupsItem) GetCursorOk() (*IngestionOffsetCursor, bool)`
+
+GetCursorOk returns a tuple with the Cursor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCursor
+
+`func (o *CallGroupsItem) SetCursor(v IngestionOffsetCursor)`
+
+SetCursor sets Cursor field to given value.
+
+
+### GetMetrics
+
+`func (o *CallGroupsItem) GetMetrics() map[string][][]float32`
+
+GetMetrics returns the Metrics field if non-nil, zero value otherwise.
+
+### GetMetricsOk
+
+`func (o *CallGroupsItem) GetMetricsOk() (*map[string][][]float32, bool)`
+
+GetMetricsOk returns a tuple with the Metrics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetrics
+
+`func (o *CallGroupsItem) SetMetrics(v map[string][][]float32)`
+
+SetMetrics sets Metrics field to given value.
+
+
+### GetName
+
+`func (o *CallGroupsItem) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *CallGroupsItem) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *CallGroupsItem) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetTimestamp
+
+`func (o *CallGroupsItem) GetTimestamp() int64`
+
+GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
+
+### GetTimestampOk
+
+`func (o *CallGroupsItem) GetTimestampOk() (*int64, bool)`
+
+GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestamp
+
+`func (o *CallGroupsItem) SetTimestamp(v int64)`
+
+SetTimestamp sets Timestamp field to given value.
+
+### HasTimestamp
+
+`func (o *CallGroupsItem) HasTimestamp() bool`
+
+HasTimestamp returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

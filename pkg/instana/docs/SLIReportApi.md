@@ -10,30 +10,59 @@ Method | HTTP request | Description
 
 ## GetSli
 
-> []SliReport GetSli(ctx, sliId, optional)
+> []SliReport GetSli(ctx, sliId).Slo(slo).From(from).To(to).Execute()
 
 Generate SLI report
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    sliId := "sliId_example" // string | 
+    slo := float64(1.2) // float64 |  (optional)
+    from := int64(789) // int64 |  (optional)
+    to := int64(789) // int64 |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLIReportApi.GetSli(context.Background(), sliId).Slo(slo).From(from).To(to).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SLIReportApi.GetSli``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetSli`: []SliReport
+    fmt.Fprintf(os.Stdout, "Response from `SLIReportApi.GetSli`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**sliId** | **string**|  | 
- **optional** | ***GetSliOpts** | optional parameters | nil if no parameters
+**sliId** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetSliOpts struct
+Other parameters are passed through a pointer to a apiGetSliRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **slo** | **optional.Float64**|  | 
- **from** | **optional.Int64**|  | 
- **to** | **optional.Int64**|  | 
+ **slo** | **float64** |  | 
+ **from** | **int64** |  | 
+ **to** | **int64** |  | 
 
 ### Return type
 

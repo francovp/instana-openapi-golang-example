@@ -14,17 +14,51 @@ Method | HTTP request | Description
 
 ## DeleteRelease
 
-> DeleteRelease(ctx, releaseId)
+> DeleteRelease(ctx, releaseId).Execute()
 
 Delete release
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    releaseId := "releaseId_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ReleasesApi.DeleteRelease(context.Background(), releaseId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasesApi.DeleteRelease``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**releaseId** | **string**|  | 
+**releaseId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteReleaseRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -46,30 +80,55 @@ Name | Type | Description  | Notes
 
 ## GetAllReleases
 
-> []ReleaseWithMetadata GetAllReleases(ctx, optional)
+> []ReleaseWithMetadata GetAllReleases(ctx).From(from).To(to).MaxResults(maxResults).Execute()
 
 Get all releases
 
-This endpoint exposes the Releases functionality.  These APIs can be used to create, update, delete and fetch already existing releases.  ## Mandatory Parameters:  **releaseId:** A unique identifier assigned to each release.  ## Optional Parameters:  **name:** Name of the exact release you want to retrieve, eg. \"Release-161\", \"Release-162\".  **start:** Start time of the particular release.  **from:** Filters the releases to retrieve only the releases which have \"start\" time greater than or equal to this value.  **to:** Filters the releases to retrieve only the releases which have \"start\" time lesser than or equal to this value.  **maxResults:** Maximum number of releases to be retrieved.  ## Defaults:  **from, to, maxResults:** By default these parameters are not set.  
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    from := int64(789) // int64 |  (optional)
+    to := int64(789) // int64 |  (optional)
+    maxResults := int32(56) // int32 |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ReleasesApi.GetAllReleases(context.Background()).From(from).To(to).MaxResults(maxResults).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasesApi.GetAllReleases``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAllReleases`: []ReleaseWithMetadata
+    fmt.Fprintf(os.Stdout, "Response from `ReleasesApi.GetAllReleases`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllReleasesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetAllReleasesOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetAllReleasesOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **optional.Int64**|  | 
- **to** | **optional.Int64**|  | 
- **maxResults** | **optional.Int32**|  | 
+ **from** | **int64** |  | 
+ **to** | **int64** |  | 
+ **maxResults** | **int32** |  | 
 
 ### Return type
 
@@ -91,17 +150,53 @@ Name | Type | Description  | Notes
 
 ## GetRelease
 
-> ReleaseWithMetadata GetRelease(ctx, releaseId)
+> ReleaseWithMetadata GetRelease(ctx, releaseId).Execute()
 
 Get release
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    releaseId := "releaseId_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ReleasesApi.GetRelease(context.Background(), releaseId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasesApi.GetRelease``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetRelease`: ReleaseWithMetadata
+    fmt.Fprintf(os.Stdout, "Response from `ReleasesApi.GetRelease`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**releaseId** | **string**|  | 
+**releaseId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetReleaseRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -123,17 +218,49 @@ Name | Type | Description  | Notes
 
 ## PostRelease
 
-> ReleaseWithMetadata PostRelease(ctx, release)
+> ReleaseWithMetadata PostRelease(ctx).Release(release).Execute()
 
 Create release
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    release := *openapiclient.NewRelease("Name_example", int64(123)) // Release | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ReleasesApi.PostRelease(context.Background()).Release(release).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasesApi.PostRelease``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PostRelease`: ReleaseWithMetadata
+    fmt.Fprintf(os.Stdout, "Response from `ReleasesApi.PostRelease`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostReleaseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**release** | [**Release**](Release.md)|  | 
+ **release** | [**Release**](Release.md) |  | 
 
 ### Return type
 
@@ -155,18 +282,55 @@ Name | Type | Description  | Notes
 
 ## PutRelease
 
-> ReleaseWithMetadata PutRelease(ctx, releaseId, release)
+> ReleaseWithMetadata PutRelease(ctx, releaseId).Release(release).Execute()
 
 Update release
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    releaseId := "releaseId_example" // string | 
+    release := *openapiclient.NewRelease("Name_example", int64(123)) // Release | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ReleasesApi.PutRelease(context.Background(), releaseId).Release(release).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasesApi.PutRelease``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutRelease`: ReleaseWithMetadata
+    fmt.Fprintf(os.Stdout, "Response from `ReleasesApi.PutRelease`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**releaseId** | **string**|  | 
-**release** | [**Release**](Release.md)|  | 
+**releaseId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutReleaseRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **release** | [**Release**](Release.md) |  | 
 
 ### Return type
 
